@@ -1,0 +1,202 @@
+$text-color: #ffffff;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+// common
+.container {
+  padding: 0 28px;
+}
+a {
+  color: $text-color;
+}
+.btn {
+  background: #8098aa;
+  border-radius: 10px;
+  width: 231px;
+  height: 52px;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// process-page
+.process-page-body-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+// header
+.header {
+  background: #d3bc89;
+  .header-logo {
+    padding: 23px 0px 0px 0;
+    cursor: pointer;
+  }
+  .header-menu {
+    display: flex;
+    align-items: center;
+    color: $text-color;
+    gap: 2px;
+    margin-left: 150px;
+    flex-wrap: wrap;
+    .header-menu-item {
+      background: #dd854c;
+      border-radius: 6px 6px 0px 0px;
+      padding: 4px 32px;
+      cursor: pointer;
+    }
+    .header-menu-item__active {
+      background: #e84e0f;
+    }
+  }
+}
+
+// sidebar
+.header-sidebar-content {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  .header-sidebar {
+    background: #8098aa;
+    padding: 40px 0;
+    color: $text-color;
+    width: 200px;
+  }
+  .header-sidebar-item {
+    padding: 24px 0px;
+    cursor: pointer;
+  }
+  .header-sidebar-main-item {
+    font-weight: 700;
+  }
+  .header-sidebar-item-active {
+    display: flex;
+    align-items: center;
+  }
+  .header-sidebar-item__sub {
+    padding: 24px 18px;
+    font-weight: 700;
+  }
+  .header-sidebar-item__sub-active {
+    width: 7px;
+    height: 7px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 1;
+  }
+  .header-sidebar-item__sub-dactive {
+    width: 7px;
+    height: 7px;
+    opacity: 0;
+  }
+}
+
+// sidebarsub
+.sidebarsub {
+  width: 350px;
+  text-align: center;
+  border: 1px solid #dedede;
+  .sidebarsub-title {
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 42px 0px 26px 0px;
+  }
+  .sidebarsub-item {
+    font-size: 12px;
+    line-height: 15px;
+    padding: 12px 0px;
+    background: rgba(177, 210, 236, 0.4);
+    border-radius: 22px;
+    cursor: pointer;
+    margin: 10px 30px;
+  }
+}
+
+// main create ressort
+.maincreate-ressort {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  .maincreate-ressort-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+}
+
+// team schedule
+.sheduleteam {
+  width: 100%;
+  .sheduleteam-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 35px;
+    background: #ffffff;
+  }
+
+  .sheduleteam-top-item {
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    cursor: pointer;
+  }
+}
+
+// schedule team body
+.scheduleteambody {
+  background: #f6f5ff;
+  border-radius: 14px;
+  padding: 25px;
+  margin: 0 35px;
+  .scheduleteambody-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+  }
+  .scheduleteambody-card-wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    .scheduleteambody-card {
+      background: #ebebf9;
+      border-radius: 10px;
+      width: 15%;
+      padding: 20px 80px;
+      height: 200px;
+      .scheduleteambody-card-para {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        color: #000000;
+        padding: 13px;
+        background: rgba(177, 210, 236, 0.4);
+        border-radius: 22px;
+        margin-bottom: 10px;
+      }
+    }
+    .scheduleteambody-card__plus {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}

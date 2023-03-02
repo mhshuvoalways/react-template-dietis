@@ -1,0 +1,49 @@
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .scheduleteambody {
+    .scheduleteambody-card-wrapper {
+      .scheduleteambody-card {
+        width: 30%;
+        padding: 20px 30px;
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .process-page-body-container {
+    flex-wrap: wrap;
+    gap: 100px;
+  }
+  .scheduleteambody {
+    .scheduleteambody-card-wrapper {
+      .scheduleteambody-card {
+        width: 50%;
+        padding: 20px 20px;
+      }
+    }
+  }
+}
+
+/* Small devices  */
+@media only screen and (max-width: 400px) {
+  .header {
+    .header-menu {
+      margin-left: 0px;
+    }
+  }
+  .header-sidebar-content {
+    .header-sidebar {
+      width: 100%;
+    }
+  }
+  .scheduleteambody {
+    .scheduleteambody-card-wrapper {
+      .scheduleteambody-card {
+        width: 100%;
+        padding: 20px 20px;
+      }
+    }
+  }
+}
