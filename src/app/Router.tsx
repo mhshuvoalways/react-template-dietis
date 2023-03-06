@@ -1,14 +1,16 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NotFound404 from "../pages/NotFound404";
 import Process from "../pages/settings/Process";
-import ScheduleTeam from "../pages/schedule/Team";
+import Schedules from "../pages/Schedules";
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="" element={<Schedules />} />
         <Route path="process" element={<Process />} />
-        <Route path="" element={<ScheduleTeam />} />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </BrowserRouter>
   );

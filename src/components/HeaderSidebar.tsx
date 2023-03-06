@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MyContext } from "../app/Context";
 import Logo from "../assets/images/logo.svg";
+import { type TodoContextType } from "../types/contextType";
 
 interface Props {
   children: React.ReactNode
 }
 
 const Header: React.FC<Props> = (props: Props) => {
+  const { mainMenu, mainMenuHandler } = useContext(
+    MyContext
+  ) as TodoContextType;
+
   const headerMenus = [
     {
       id: 1,
@@ -35,7 +41,7 @@ const Header: React.FC<Props> = (props: Props) => {
         {
           id: 1,
           name: "Infochannel",
-          href: '/'
+          href: "/"
         }
       ]
     },
@@ -43,20 +49,15 @@ const Header: React.FC<Props> = (props: Props) => {
       id: 3,
       name: "Settings",
       sub: [
-        { id: 1, name: "Process", href: '/process' },
-        { id: 2, name: "Registration", href: '/' }
+        { id: 1, name: "Process", href: "/process" },
+        { id: 2, name: "Registration", href: "/registration" }
       ]
     }
   ];
 
-  const [mainMenu, setMainMenu] = useState<string>("Teams");
   const [state, setState] = useState<any>({});
 
   const location = window.location.pathname;
-
-  const mainMenuHandler = (value: string): any => {
-    setMainMenu(value);
-  };
 
   const sidebMenuHandler = (value: any): any => {
     setState(value);
@@ -96,7 +97,7 @@ const Header: React.FC<Props> = (props: Props) => {
         <div className="header-sidebar">
           {menus.map((menu) => (
             <div className="container" key={menu.id}>
-              <Link to={(menu.sub.length > 0) ? menu.sub[0].href : '/'}>
+              <Link to={menu.sub.length > 0 ? menu.sub[0].href : "/"}>
                 <p
                   className={
                     state.id === menu.id
