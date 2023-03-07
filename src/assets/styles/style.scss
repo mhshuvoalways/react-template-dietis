@@ -2,6 +2,7 @@ $text-color: #ffffff;
 
 body {
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 // common
@@ -10,7 +11,7 @@ body {
 }
 
 a {
-  color: $text-color;
+  color: $text-color;;
 }
 .btn {
   background: #8098aa;
@@ -20,7 +21,7 @@ a {
   outline: 0;
   border: none;
   cursor: pointer;
-  color: #ffffff;
+  color: $text-color;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -37,13 +38,13 @@ a {
 .header {
   background: #d3bc89;
   .header-logo {
-    padding: 23px 0px 0px 0;
+    padding: 23px 0px 10px 0;
     cursor: pointer;
   }
   .header-menu {
     display: flex;
     align-items: center;
-    color: $text-color;
+    color: $text-color;;
     gap: 2px;
     margin-left: 150px;
     flex-wrap: wrap;
@@ -67,8 +68,12 @@ a {
   .header-sidebar {
     background: #8098aa;
     padding: 40px 0;
-    color: $text-color;
+    color: $text-color;;
     width: 200px;
+    height: auto;
+
+    // position: absolute;
+    // inset: 80px 0 0 0;
   }
   .header-sidebar-item {
     padding: 24px 0px;
@@ -104,6 +109,39 @@ a {
   width: 350px;
   text-align: center;
   border: 1px solid #dedede;
+  .sidebarsub-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+    .sidebarsub-title {
+      padding: 0 0;
+    }
+  }
+  .sidebarsub-top-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .sidebarsub-top-btn {
+    border-radius: 13px;
+    padding: 3px;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: $text-color;
+    width: 60px;
+    cursor: pointer;
+  }
+  .sidebarsub-top-btn__search {
+    background: #bbc6d4;
+  }
+  .sidebarsub-top-btn__sort {
+    background: #e84e0f;
+  }
   .sidebarsub-title {
     color: #000000;
     font-weight: 700;
@@ -147,7 +185,6 @@ a {
     gap: 30px;
     flex-wrap: wrap;
     padding: 15px 0;
-    background: #ffffff;
   }
 
   .sheduleteam-top-item {
@@ -279,3 +316,128 @@ a {
 }
 
 // Schedule resident body card
+
+// protocol schedule
+.protocolschedulebody-chat-chart {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.protocolscheduletop {
+  font-weight: 700;
+  line-height: 20px;
+}
+.protocolschedulebody {
+  background: #f6f5ff;
+  border-radius: 14px;
+  padding: 25px;
+  margin: 19px 0;
+}
+.protocolschedulebody-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.protocolschedulebody-text-btn {
+  background: #e84e0f;
+  border-radius: 13px;
+  padding: 3px 12px;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  color: $text-color;
+  cursor: pointer;
+}
+.protocolschedulebody-text-first {
+  font-size: 18px;
+  line-height: 21px;
+}
+.protocolschedulebody-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 15px;
+}
+.protocolschedulebody-last {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+// protocol chat
+.protocol-chat {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px 30px;
+  width: 35%;
+}
+.protocol-chat-item {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.proptocolchat-name-short {
+  background: #d9d9d9;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.protocol-chat-right {
+  background: #f6f5ff;
+  border-radius: 17px;
+  padding: 7px 13px;
+}
+
+.protocol-chat-item-btn {
+  background: #61b373;
+  border: 0.769912px solid #c2c3d0;
+  border-radius: 14.6283px;
+  font-weight: 500;
+  font-size: 12.3186px;
+  // line-height: 15px;
+  letter-spacing: 0.34492px;
+  color: $text-color;
+  padding: 7px 13px;
+  text-align: center;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+.protocol-chat-item-btn__second {
+  background: #da4a54;
+}
+.protocol-chat-item-btn__third {
+  background: #ffaf10;
+}
+.protocol-chat-com {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 4px;
+}
+.protocol-chat-com-date {
+  font-weight: 457;
+  font-size: 12px;
+  line-height: 16px;
+  color: #686a8a;
+  margin-top: 5px;
+}
+
+.protocol-chart {
+  width: 65%;
+  height: 100%;
+}
+.protocol-chart-area {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px 30px;
+}

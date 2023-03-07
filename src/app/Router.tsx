@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound404 from "../pages/NotFound404";
 import Process from "../pages/settings/Process";
 import Schedules from "../pages/Schedules";
+import Infochannel from "../pages/Infochannel";
 
 const Router: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Router: React.FC = () => {
       <Routes>
         <Route path="" element={<Schedules />} />
         <Route path="process" element={<Process />} />
+        <Route path="infochannel" element={<Infochannel />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </BrowserRouter>

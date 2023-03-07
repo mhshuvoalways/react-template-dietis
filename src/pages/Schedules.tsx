@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { MyContext } from "../app/Context";
 import HeaderSidebar from "../components/HeaderSidebar";
-import ScheduleBody from "../components/ScheduleBody";
-import ScheduleTop from "../components/ScheduleTop";
+import ScheduleBody from "../components/shedule/ScheduleBody";
+import ScheduleTop from "../components/shedule/ScheduleTop";
 import SidebarSub from "../components/SidebarSub";
 import { type TodoContextType } from "../types/contextType";
 
@@ -13,7 +13,7 @@ const Process: React.FC = () => {
 
   return (
     <div>
-      <HeaderSidebar>
+      <HeaderSidebar headerMenuShow={true}>
         <div className="process-page-body-container">
           <SidebarSub topValue={mainMenu}/>
           <div className="sheduleteam container">

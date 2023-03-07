@@ -1,5 +1,5 @@
 import React from "react";
-import Plus from "../assets/images/plus.svg";
+import Plus from "../../assets/images/plus.svg";
 
 interface Props {
   arrNumber: any

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { MyContext } from "../app/Context";
-import { type TodoContextType } from "../types/contextType";
+import { MyContext } from "../../app/Context";
+import { type TodoContextType } from "../../types/contextType";
 import ScheduleBodyCard from "./ScheduleBodyCard";
 
 const ScheduleTeamBody: React.FC = () => {

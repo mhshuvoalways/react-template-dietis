@@ -6,6 +6,7 @@ import { type TodoContextType } from "../types/contextType";
 
 interface Props {
   children: React.ReactNode
+  headerMenuShow: boolean
 }
 
 const Header: React.FC<Props> = (props: Props) => {
@@ -41,7 +42,7 @@ const Header: React.FC<Props> = (props: Props) => {
         {
           id: 1,
           name: "Infochannel",
-          href: "/"
+          href: "/infochannel"
         }
       ]
     },
@@ -77,21 +78,23 @@ const Header: React.FC<Props> = (props: Props) => {
     <div>
       <div className="header container">
         <img src={Logo} alt={Logo} className="header-logo" />
-        <div className="header-menu">
-          {headerMenus.map((el) => (
-            <p
-              key={el.id}
-              className={
-                mainMenu === el.name
-                  ? "header-menu-item header-menu-item__active"
-                  : "header-menu-item"
-              }
-              onClick={() => mainMenuHandler(el.name)}
-            >
-              {el.name}
-            </p>
-          ))}
-        </div>
+        {props.headerMenuShow && (
+          <div className="header-menu">
+            {headerMenus.map((el) => (
+              <p
+                key={el.id}
+                className={
+                  mainMenu === el.name
+                    ? "header-menu-item header-menu-item__active"
+                    : "header-menu-item"
+                }
+                onClick={() => mainMenuHandler(el.name)}
+              >
+                {el.name}
+              </p>
+            ))}
+          </div>
+        )}
       </div>
       <div className="header-sidebar-content">
         <div className="header-sidebar">
