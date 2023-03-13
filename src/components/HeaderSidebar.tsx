@@ -10,9 +10,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = (props: Props) => {
-  const { mainMenu, mainMenuHandler } = useContext(
-    MyContext
-  ) as ContextType;
+  const { mainMenu, mainMenuHandler } = useContext(MyContext) as ContextType;
 
   const headerMenus = [
     {
@@ -60,11 +58,16 @@ const Header: React.FC<Props> = (props: Props) => {
   ];
 
   const [state, setState] = useState<any>({});
+  const [subMenuShow, setSubMenuShow] = useState<boolean>(true);
 
   const location = window.location.pathname;
 
   const sidebMenuHandler = (value: any): any => {
     setState(value);
+  };
+
+  const subMenuShowHandler = (): any => {
+    setSubMenuShow(!subMenuShow);
   };
 
   useEffect(() => {
@@ -80,7 +83,18 @@ const Header: React.FC<Props> = (props: Props) => {
   return (
     <div>
       <div className="header container">
-        <img src={Logo} alt={Logo} className="header-logo" />
+        <div className="header-logo-bar">
+          <img src={Logo} alt={Logo} className="header-logo" />
+          <div className="header-bar" onClick={subMenuShowHandler}>
+            {subMenuShow
+              ? (
+              <i className="fa-solid fa-bars"></i>
+                )
+              : (
+              <i className="fa-solid fa-xmark"></i>
+                )}
+          </div>
+        </div>
         {props.headerMenuShow && (
           <div className="header-menu">
             {headerMenus.map((el) => (
@@ -100,7 +114,11 @@ const Header: React.FC<Props> = (props: Props) => {
         )}
       </div>
       <div className="header-sidebar-content">
-        <div className="header-sidebar">
+        <div
+          className={`header-sidebar ${
+            subMenuShow ? "header-logic-show" : "header-logic-block"
+          }`}
+        >
           {menus.map((menu) => (
             <div className="container" key={menu.id}>
               <Link to={menu.sub.length > 0 ? menu.sub[0].href : "/"}>
@@ -141,7 +159,7 @@ const Header: React.FC<Props> = (props: Props) => {
             </div>
           ))}
         </div>
-        {props.children}
+        <div className="header-children">{props.children}</div>
       </div>
     </div>
   );
