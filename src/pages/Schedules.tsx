@@ -1,24 +1,63 @@
 import React, { useContext } from "react";
 import { MyContext } from "../app/Context";
 import HeaderSidebar from "../components/HeaderSidebar";
-import ScheduleBody from "../components/shedule/ScheduleBody";
+import Employees from "../components/shedule/Employees";
+import Residents from "../components/shedule/Residents";
 import ScheduleTop from "../components/shedule/ScheduleTop";
-import SidebarSub from "../components/SidebarSub";
-import { type TodoContextType } from "../types/contextType";
+import Teams from "../components/shedule/Teams";
+import ResidentSub from "../components/sidebarSub/ResidentSub";
+import TeamsSub from "../components/sidebarSub/TeamsSub";
+import { type ContextType } from "../types/contextType";
 
 const Process: React.FC = () => {
-  const { mainMenu } = useContext(
-    MyContext
-  ) as TodoContextType;
+  const { mainMenu, selectLeader } = useContext(MyContext) as ContextType;
 
   return (
     <div>
       <HeaderSidebar headerMenuShow={true}>
         <div className="process-page-body-container">
-          <SidebarSub topValue={mainMenu}/>
+          {mainMenu === "Residents" && <ResidentSub />}
+          {mainMenu === "Teams" && <TeamsSub />}
           <div className="sheduleteam container">
-            <ScheduleTop />
-            <ScheduleBody/>
+            {(mainMenu === "Residents" || mainMenu === "Teams") && (
+              <ScheduleTop />
+            )}
+            {mainMenu === "Residents" && (
+              <>
+                <Residents
+                  arrNumber={[1, 2, 3]}
+                  title="Ressort Gardening"
+                  mainMenu={mainMenu}
+                />
+                <div className="maincreate-ressort-btn__scheduleteambodybtn">
+                  <button className="maincreate-ressort-btn btn">
+                    Create Ressort
+                  </button>
+                </div>
+              </>
+            )}
+            {mainMenu === "Teams" && (
+              <>
+                <Teams
+                  arrNumber={[1, 3, 4]}
+                  title="Landscape Gardening Department"
+                  mainMenu={mainMenu}
+                />
+                <div className="maincreate-ressort-btn__scheduleteambodybtn">
+                  <button className="maincreate-ressort-btn btn">
+                    Create Ressort
+                  </button>
+                </div>
+                {selectLeader && (
+                  <Teams
+                    arrNumber={[1]}
+                    title="Butcher's department"
+                    mainMenu={mainMenu}
+                  />
+                )}
+              </>
+            )}
+            {mainMenu === "Employees" && <Employees />}
           </div>
         </div>
       </HeaderSidebar>

@@ -13,6 +13,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/semi": "off",
-    "@typescript-eslint/quotes": "off"
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/strict-boolean-expressions": ["off", "allow-boolean-or-undefined"]
   }
 }

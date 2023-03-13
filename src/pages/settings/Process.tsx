@@ -1,18 +1,18 @@
-import React, { useContext } from "react";
-import { MyContext } from "../../app/Context";
+import React from "react";
+// import { MyContext } from "../../app/Context";
 import HeaderSidebar from "../../components/HeaderSidebar";
 import MainCreateRessort from "../../components/MainCreateRessort";
-import SidebarSub from "../../components/SidebarSub";
-import { type TodoContextType } from "../../types/contextType";
+import ProcessSub from "../../components/sidebarSub/ProcessSub";
+// import { type ContextType } from "../../types/contextType";
 
 const Process: React.FC = () => {
-  const { mainMenu } = useContext(MyContext) as TodoContextType;
+  // const { mainMenu } = useContext(MyContext) as ContextType;
 
   return (
     <div>
-      <HeaderSidebar headerMenuShow={true}>
+      <HeaderSidebar headerMenuShow={false}>
         <div className="process-page-body-container">
-          <SidebarSub topValue={mainMenu} />
+          <ProcessSub />
           <MainCreateRessort />
         </div>
       </HeaderSidebar>

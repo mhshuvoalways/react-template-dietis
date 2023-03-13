@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MyContext } from "../app/Context";
 import Logo from "../assets/images/logo.svg";
-import { type TodoContextType } from "../types/contextType";
+import { type ContextType } from "../types/contextType";
 
 interface Props {
   children: React.ReactNode
@@ -12,12 +12,12 @@ interface Props {
 const Header: React.FC<Props> = (props: Props) => {
   const { mainMenu, mainMenuHandler } = useContext(
     MyContext
-  ) as TodoContextType;
+  ) as ContextType;
 
   const headerMenus = [
     {
       id: 1,
-      name: "Bewohner"
+      name: "Residents"
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Header: React.FC<Props> = (props: Props) => {
     },
     {
       id: 3,
-      name: "Mitarbeiter"
+      name: "Employees"
     }
   ];
 
@@ -33,11 +33,13 @@ const Header: React.FC<Props> = (props: Props) => {
     {
       id: 1,
       name: "Schedule",
+      href: "/schedule",
       sub: []
     },
     {
       id: 2,
       name: "Protocols",
+      href: "/protocols",
       sub: [
         {
           id: 1,
@@ -49,6 +51,7 @@ const Header: React.FC<Props> = (props: Props) => {
     {
       id: 3,
       name: "Settings",
+      href: "/settings",
       sub: [
         { id: 1, name: "Process", href: "/process" },
         { id: 2, name: "Registration", href: "/registration" }
