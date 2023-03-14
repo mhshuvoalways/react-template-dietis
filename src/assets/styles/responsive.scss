@@ -8,6 +8,11 @@
   .header-children {
     width: 80%;
   }
+  .header {
+    .header-menu {
+      width: 65%;
+    }
+  }
   .scheduleteambody {
     .scheduleteambody-card-wrapper {
       .scheduleteambody-card {
@@ -96,6 +101,9 @@
   .header {
     .header-menu {
       margin-left: 0px;
+    }
+    .header-menu {
+      width: 100%;
     }
   }
 

@@ -26,7 +26,25 @@ const Residents: React.FC<Props> = (props: Props) => {
                 Thomas Heinz
               </p>
               <p className="sidebarsub-resident-first sidebarsub-resident-first__last">
+                N
+              </p>
+            </div>
+            <div className="scheduleteambody-card-resident">
+              <p className="sidebarsub-resident-first sidebarsub-resident-first__last">
                 V
+              </p>
+              <p className="scheduleteambody-card-para__resident">
+                Thomas Heinz
+              </p>
+              <p className="sidebarsub-resident-first">N</p>
+            </div>
+            <div className="scheduleteambody-card-resident">
+              <p className="sidebarsub-resident-first">V</p>
+              <p className="scheduleteambody-card-para__resident">
+                Thomas Heinz
+              </p>
+              <p className="sidebarsub-resident-first sidebarsub-resident-first__last">
+                N
               </p>
             </div>
           </div>

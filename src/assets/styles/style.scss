@@ -45,6 +45,10 @@ a {
   width: 100%;
   z-index: 10;
   height: 105px;
+  .header-headermenu-gap{
+    width: 20%;
+    margin: auto;
+  }
   .header-logo-bar {
     display: flex;
     justify-content: space-between;
@@ -66,8 +70,9 @@ a {
     align-items: center;
     color: $text-color;
     gap: 2px;
-    margin-left: 150px;
     flex-wrap: wrap;
+    width: 74%;
+    margin: auto;
     .header-menu-item {
       background: #dd854c;
       border-radius: 6px 6px 0px 0px;
@@ -267,6 +272,7 @@ a {
       background: rgba(177, 210, 236, 0.4);
       border-radius: 22px;
       gap: 10px;
+      margin-bottom: 10px;
     }
 
     .scheduleteambody-card__resident {
