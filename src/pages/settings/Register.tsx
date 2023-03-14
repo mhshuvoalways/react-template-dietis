@@ -6,7 +6,7 @@ const Register: React.FC = () => {
   return (
     <div>
       <HeaderSidebar headerMenuShow={false}>
-        <div className="process-page-body-container">
+        <div className="process-page-body-container container">
           <RegisterCompo />
         </div>
       </HeaderSidebar>

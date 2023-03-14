@@ -12,7 +12,7 @@ const Process: React.FC = () => {
         <div className="process-page-body-container">
           <ProcessSub />
           {/* <MainCreateRessort /> */}
-          <div>
+          <div className="container">
             <ProcessBody />
             <CreateTagBtn />
           </div>
