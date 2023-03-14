@@ -6,16 +6,18 @@ import Schedules from "../pages/Schedules";
 import Infochannel from "../pages/Infochannel";
 import CreateTag from "../pages/settings/CreateTag";
 import ActionTrigger from "../pages/settings/ActionTrigger";
+import Register from "../pages/settings/Register";
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="" element={<Schedules />} />
-        <Route path="process" element={<Process />} />
-        <Route path="process/createtag" element={<CreateTag />} />
-        <Route path="process/actiontrigger" element={<ActionTrigger />} />
-        <Route path="infochannel" element={<Infochannel />} />
+        <Route path="settings/process" element={<Process />} />
+        <Route path="settings/process/createtag" element={<CreateTag />} />
+        <Route path="settings/process/actiontrigger" element={<ActionTrigger />} />
+        <Route path="settings/registration" element={<Register />} />
+        <Route path="protocols/infochannel" element={<Infochannel />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </BrowserRouter>

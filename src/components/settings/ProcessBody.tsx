@@ -118,7 +118,7 @@ const ProcessBody: React.FC<Props> = (props: Props) => {
         </div>
       </div>
       <div className="processbody-right-action-btn">
-        <Link to="/process/actiontrigger">
+        <Link to="/settings/process/actiontrigger" className="btn">
           <button className="maincreate-ressort-btn btn">+ Add action</button>
         </Link>
       </div>

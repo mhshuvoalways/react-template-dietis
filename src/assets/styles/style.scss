@@ -690,3 +690,16 @@ a {
 .processbody-theme-select__trigger-recipient {
   color: #3c71f9;
 }
+
+// register
+.register {
+  padding: 15px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.register-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

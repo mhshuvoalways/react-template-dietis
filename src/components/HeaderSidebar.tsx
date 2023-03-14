@@ -31,7 +31,7 @@ const Header: React.FC<Props> = (props: Props) => {
     {
       id: 1,
       name: "Schedule",
-      href: "/schedule",
+      href: "/",
       sub: []
     },
     {
@@ -42,7 +42,7 @@ const Header: React.FC<Props> = (props: Props) => {
         {
           id: 1,
           name: "Infochannel",
-          href: "/infochannel"
+          href: "/protocols/infochannel"
         }
       ]
     },
@@ -51,8 +51,8 @@ const Header: React.FC<Props> = (props: Props) => {
       name: "Settings",
       href: "/settings",
       sub: [
-        { id: 1, name: "Process", href: "/process" },
-        { id: 2, name: "Registration", href: "/registration" }
+        { id: 1, name: "Process", href: "/settings/process" },
+        { id: 2, name: "Registration", href: "/settings/registration" }
       ]
     }
   ];
@@ -72,11 +72,15 @@ const Header: React.FC<Props> = (props: Props) => {
 
   useEffect(() => {
     menus.forEach((menu) => {
-      menu.sub.forEach((su) => {
-        if (su.href === location) {
-          setState(menu);
-        }
-      });
+      if (menu.sub.length) {
+        menu.sub.forEach((su) => {
+          if (location.includes(su.href)) {
+            setState(menu);
+          }
+        });
+      } else {
+        setState(menu);
+      }
     });
   }, []);
 
@@ -84,7 +88,9 @@ const Header: React.FC<Props> = (props: Props) => {
     <div>
       <div className="header container">
         <div className="header-logo-bar">
-          <img src={Logo} alt={Logo} className="header-logo" />
+          <Link to="/">
+            <img src={Logo} alt={Logo} className="header-logo" />
+          </Link>
           <div className="header-bar" onClick={subMenuShowHandler}>
             {subMenuShow
               ? (
@@ -137,7 +143,7 @@ const Header: React.FC<Props> = (props: Props) => {
                 return (
                   state.id === menu.id && (
                     <Link to={sub.href} key={sub.id}>
-                      {location === sub.href
+                      {location.includes(sub.href)
                         ? (
                         <p className="header-sidebar-item-active">
                           <p className="header-sidebar-item__sub-active"></p>
