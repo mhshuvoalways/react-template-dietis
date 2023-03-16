@@ -86,8 +86,8 @@ const Header: React.FC<Props> = (props: Props) => {
 
   return (
     <div>
-      <div className="header container">
-        <div className="header-logo-bar">
+      <div className="header">
+        <div className="header-logo-bar container">
           <Link to="/">
             <img src={Logo} alt={Logo} className="header-logo" />
           </Link>
@@ -101,23 +101,26 @@ const Header: React.FC<Props> = (props: Props) => {
                 )}
           </div>
         </div>
-        {props.headerMenuShow && (
-          <div className="header-menu">
-            {headerMenus.map((el) => (
-              <p
-                key={el.id}
-                className={
-                  mainMenu === el.name
-                    ? "header-menu-item header-menu-item__active"
-                    : "header-menu-item"
-                }
-                onClick={() => mainMenuHandler(el.name)}
-              >
-                {el.name}
-              </p>
-            ))}
-          </div>
-        )}
+        <div className="header-main-flex">
+          <div className="header-main-extra-gap"></div>
+          {props.headerMenuShow && (
+            <div className="header-menu">
+              {headerMenus.map((el) => (
+                <p
+                  key={el.id}
+                  className={
+                    mainMenu === el.name
+                      ? "header-menu-item header-menu-item__active"
+                      : "header-menu-item"
+                  }
+                  onClick={() => mainMenuHandler(el.name)}
+                >
+                  {el.name}
+                </p>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       <div className="header-sidebar-content">
         <div
